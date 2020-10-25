@@ -5,11 +5,7 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert", "WkHtmlSmartConvert\WkHtmlSmartConvert.csproj", "{1FBCB95A-590D-4FBD-84AD-C67BF170FF8D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TEMP", "TEMP", "{FCCDCEFD-D22A-4DF9-B02B-D05204F9C5D8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Tests", "WkHtmlSmartConvert.Tests\WkHtmlSmartConvert.Tests.csproj", "{E4E7AF04-A02C-431E-BB81-28CB638362A1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebTeste\WebApplication1.csproj", "{946E1168-F487-4E00-9443-A593C2E883D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,16 +21,9 @@ Global
 		{E4E7AF04-A02C-431E-BB81-28CB638362A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4E7AF04-A02C-431E-BB81-28CB638362A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4E7AF04-A02C-431E-BB81-28CB638362A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{946E1168-F487-4E00-9443-A593C2E883D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{946E1168-F487-4E00-9443-A593C2E883D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{946E1168-F487-4E00-9443-A593C2E883D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{946E1168-F487-4E00-9443-A593C2E883D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{946E1168-F487-4E00-9443-A593C2E883D1} = {FCCDCEFD-D22A-4DF9-B02B-D05204F9C5D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C5DE074-E16E-4E63-BBA2-96309EAD970E}

@@ -20,23 +20,35 @@ namespace WkHtmlSmartConvert.Internal
         {
             await Task.Run(() =>
             {
-                var path = GetExecutablePath();
-                var process = new Process
+                try
                 {
-                    StartInfo = new ProcessStartInfo(path, arguments)
+                    var path = GetExecutablePath();
+                    var process = new Process
                     {
-                        CreateNoWindow = true,
-                        WindowStyle = ProcessWindowStyle.Hidden
-                    }
-                };
+                        StartInfo = new ProcessStartInfo(path, arguments)
+                        {
+                            CreateNoWindow = true,
+                            WindowStyle = ProcessWindowStyle.Hidden
+                        }
+                    };
 
-                process.Start();
-                process.WaitForExit();
+                    process.Start();
+                    process.WaitForExit();
+                }
+                catch (Exception ex)
+                {
+                    Trace.TraceError(ex.ToString());
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
             }, cancellationToken);
         }
 
         protected async Task SaveFileInTempFolderAsync(Stream inputStream, string pathFile)
         {
+            var fileInfo = new FileInfo(pathFile);
+            if (!fileInfo.Directory.Exists) fileInfo.Directory.Create();
+
             using var fileStream = new FileStream(pathFile, FileMode.CreateNew);
             await inputStream.CopyToAsync(fileStream);
         }

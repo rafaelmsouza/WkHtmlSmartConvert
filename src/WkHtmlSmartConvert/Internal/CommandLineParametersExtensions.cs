@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace WkHtmlSmartConvert.Internal
 {
@@ -23,16 +25,16 @@ namespace WkHtmlSmartConvert.Internal
 
         private static (string val, bool skip) OptionsPropertyValueToString(ICommandLineParameter source, PropertyInfo property)
         {
-            switch (property.GetValue(source))
+            return (property.GetValue(source)) switch
             {
-                case int value:
-                    return value == default ? (string.Empty, true) : (value.ToString(), false);
-                case bool value:
-                    return (string.Empty, !value);
-                default:
-                    break;
-            }
-            return (string.Empty, true);
+                int value => value == default ? (string.Empty, true) : (value.ToString(), false),
+                bool value => (string.Empty, !value),
+                decimal value => value == default ? (string.Empty, true) : (value.ToString(), false),
+                Enum value => (value.ToString().ToLower(), false),
+                Encoding value => (value.BodyName, false),
+                Margins value => (value.ToString(), false),
+                _ => (string.Empty, true),
+            };
         }
     }
 }

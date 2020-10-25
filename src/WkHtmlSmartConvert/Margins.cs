@@ -5,7 +5,7 @@ namespace WkHtmlSmartConvert
     /// <summary>
     /// A definition to configure of page's margins
     /// </summary>
-    public struct Margins
+    public struct Margins : ICommandLineParameter
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Margins"/> class.
@@ -26,25 +26,30 @@ namespace WkHtmlSmartConvert
         /// <summary>
         /// Set the page bottom margin
         /// </summary>
-        [CommandLineAttribute("-B")] 
+        [CommandLine("-B")] 
         public int? Bottom;
 
         /// <summary>
         /// Set the page left margin (default 10mm)
         /// </summary>
-        [CommandLineAttribute("-L")] 
+        [CommandLine("-L")] 
         public int? Left;
 
         /// <summary>
         /// Set the page right margin (default 10mm)
         /// </summary>
-        [CommandLineAttribute("-R")] 
+        [CommandLine("-R")] 
         public int? Right;
 
         /// <summary>
         /// Set the page top margin
         /// </summary>
-        [CommandLineAttribute("-T")] 
+        [CommandLine("-T")] 
         public int? Top;
+
+        public override string ToString()
+        {
+            return this.ToCommandLineParameters();
+        }
     }
 }

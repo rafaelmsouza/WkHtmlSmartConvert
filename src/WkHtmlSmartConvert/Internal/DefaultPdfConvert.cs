@@ -42,7 +42,7 @@ namespace WkHtmlSmartConvert.Internal
             if (options == null) throw new ArgumentNullException(nameof(options));
             if (cancellationToken == null) throw new ArgumentNullException(nameof(cancellationToken));
 
-            var baseFileName = Path.Combine(Path.GetTempPath(), $"WkhtmlToPdf_{Guid.NewGuid()}");
+            var baseFileName = Path.Combine(Path.GetTempPath(), "WkhtmlToPdf", Guid.NewGuid().ToString());
             var htmlFileName = $"{baseFileName}.html";
             var pdfFileName = $"{baseFileName}.pdf";
             var arguments = $"{options} {htmlFileName} {pdfFileName}";

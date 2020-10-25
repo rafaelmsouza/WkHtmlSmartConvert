@@ -1,5 +1,6 @@
 ﻿using WkHtmlSmartConvert.Internal;
 using System;
+using System.Text;
 
 namespace WkHtmlSmartConvert
 {
@@ -18,6 +19,12 @@ namespace WkHtmlSmartConvert
         public bool IsGrayScale { get; set; }
 
         /// <summary>
+        /// Set the default text encoding, for input
+        /// </summary>
+        [CommandLine("--encoding")]
+        public Encoding Encoding { get; set; }
+
+        /// <summary>
         /// When embedding images scale them down to this dpi(default 600)
         /// </summary>
         [CommandLine("--image-dpi")]
@@ -28,12 +35,6 @@ namespace WkHtmlSmartConvert
         /// </summary>
         [CommandLine("--image-quality")]
         public int ImageQuality { get; set; } = 94;
-
-        /// <summary>
-        /// Set log level to: none, error, warn or info (default info)
-        /// </summary>
-        [CommandLine("--log-level")]
-        public LogLevel LogLevel { get; set; } = LogLevel.Info;
 
         /// <summary>
         /// Indicates whether the PDF should be generated in lower quality.
