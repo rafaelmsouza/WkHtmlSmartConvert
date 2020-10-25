@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WkHtmlSmartConvert" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj" />
+  </ItemGroup>-->
+  <!--<PropertyGroup>
+    <DockerfileFile>Dockerfile</DockerfileFile>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    --><!-- In CI/CD scenarios, you might need to change the context. By default, Visual Studio uses the
+         folder above the Dockerfile. The path is relative to the Dockerfile, so here the context is
+         set to the same folder as the Dockerfile. --><!--
+    <DockerfileContext>.</DockerfileContext>
+    --><!-- Set `docker run` arguments to mount a volume --><!--
+    <DockerfileRunArguments>-v $(pwd)/host-folder:/container-folder:ro</DockerfileRunArguments>
+    --><!-- Set `docker build` arguments to add a custom tag --><!--
+    <DockerfileBuildArguments>-t contoso/front-end:v2.0</DockerfileBuildArguments>
+    <UserSecretsId>d892d243-a389-454e-a26d-5adcafa10b84</UserSecretsId>
+  </PropertyGroup>-->
+
+
+</Project>
