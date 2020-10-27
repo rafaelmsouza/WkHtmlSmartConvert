@@ -1,7 +1,7 @@
-﻿using WkHtmlSmartConvert;
-using WkHtmlSmartConvert.Internal;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
+using WkHtmlSmartConvert;
+using WkHtmlSmartConvert.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

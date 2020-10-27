@@ -16,7 +16,7 @@ namespace WkHtmlSmartConvert.Tests
             WkHtmlSmartConvertDependencyInjectionExtensions.AddWkHtmlSmartConvert(collection);
 
             // Assert
-            collection.Should().BeEmpty();
+            collection.Should().NotContain(p => p.ServiceType == typeof(IPdfConvert));
         }
     }
 }

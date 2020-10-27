@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using System;
 using System.IO;
 using System.Text;
@@ -12,9 +11,9 @@ namespace WkHtmlSmartConvert.Internal
     {
         private readonly PdfOptions _defaultOptions;
 
-        public DefaultPdfConvert(IServiceProvider serviceProvider) : base("wkhtmltopdf")
+        public DefaultPdfConvert(IOptions<PdfOptions> options) : base("wkhtmltopdf")
         {
-            _defaultOptions = serviceProvider.GetRequiredService<IOptions<PdfOptions>>().Value;
+            _defaultOptions = options.Value;
         }
 
         public async Task<byte[]> ConvertAsync(string html)

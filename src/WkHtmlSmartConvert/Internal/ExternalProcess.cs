@@ -20,27 +20,18 @@ namespace WkHtmlSmartConvert.Internal
         {
             await Task.Run(() =>
             {
-                try
+                var path = GetExecutablePath();
+                var process = new Process
                 {
-                    var path = GetExecutablePath();
-                    var process = new Process
+                    StartInfo = new ProcessStartInfo(path, arguments)
                     {
-                        StartInfo = new ProcessStartInfo(path, arguments)
-                        {
-                            CreateNoWindow = true,
-                            WindowStyle = ProcessWindowStyle.Hidden
-                        }
-                    };
+                        CreateNoWindow = true,
+                        WindowStyle = ProcessWindowStyle.Hidden
+                    }
+                };
 
-                    process.Start();
-                    process.WaitForExit();
-                }
-                catch (Exception ex)
-                {
-                    Trace.TraceError(ex.ToString());
-                    Console.WriteLine(ex.ToString());
-                    throw;
-                }
+                process.Start();
+                process.WaitForExit();
             }, cancellationToken);
         }
 
