@@ -45,6 +45,13 @@ namespace WkHtmlSmartConvert
         /// Convert HTML to PDF by setting <see name="options"/>
         /// </summary>
         /// <param name="html"><see cref="Stream"/> of HTML to be converted</param>
+        /// <returns>The <see cref="Task"/> that represents the asynchronous operation, containing a buffer of <paramref cref="byte"/> from pdf converted.</returns>
+        Task<byte[]> ConvertAsync(Stream html);
+
+        /// <summary>
+        /// Convert HTML to PDF by setting <see name="options"/>
+        /// </summary>
+        /// <param name="html"><see cref="Stream"/> of HTML to be converted</param>
         /// <param name="options">The <see cref="PdfOptions"/> to configure PDF convertion</param>
         /// <returns>The <see cref="Task"/> that represents the asynchronous operation, containing a buffer of <paramref cref="byte"/> from pdf converted.</returns>
         Task<byte[]> ConvertAsync(Stream html, PdfOptions options);

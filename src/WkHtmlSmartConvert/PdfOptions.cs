@@ -72,14 +72,14 @@ namespace WkHtmlSmartConvert
         /// </summary>
         /// <remarks>Has priority over <see cref="PageSize"/> but <see cref="Width"/> has to be also specified.</remarks>
         [CommandLine("--page-height")]
-        public double? Height { get; set; }
+        public int? Height { get; set; }
 
         /// <summary>
         /// Sets the page width in mm.
         /// </summary>
         /// <remarks>Has priority over <see cref="PageSize"/> but <see cref="Height"/> has to be also specified.</remarks>
         [CommandLine("--page-width")]
-        public double? Width { get; set; }
+        public int? Width { get; set; }
 
         /// <summary>
         /// Sets the page margins.

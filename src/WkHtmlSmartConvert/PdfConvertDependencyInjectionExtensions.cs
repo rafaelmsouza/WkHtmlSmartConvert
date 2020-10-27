@@ -23,16 +23,16 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <summary>
         /// Adds PDF Convert to a <see cref="IWkHtmlSmartConvertBuilder"/>.
         /// </summary>
-        /// <param name="WkHtmlSmartConvertBuilder">The <see cref="IWkHtmlSmartConvertBuilder"/>.</param>
-        /// <param name="configure">A callback to configure the options.</param>
+        /// <param name="builder">The <see cref="IWkHtmlSmartConvertBuilder"/>.</param>
+        /// <param name="configure">A callback to configure the options when is not pass to convert method.</param>
         /// <returns>The same instance of the <see cref="IWkHtmlSmartConvertBuilder"/> for chaining.</returns>
-        public static IWkHtmlSmartConvertBuilder AddPdf(this IWkHtmlSmartConvertBuilder WkHtmlSmartConvertBuilder, Action<object> configure)
+        public static IWkHtmlSmartConvertBuilder AddPdf(this IWkHtmlSmartConvertBuilder builder, Action<PdfOptions> configure)
         {
             if (configure == null) throw new ArgumentNullException(nameof(configure));
 
-            WkHtmlSmartConvertBuilder.Services.Configure(configure);
-            WkHtmlSmartConvertBuilder.Services.TryAddSingleton<IPdfConvert, DefaultPdfConvert>();
-            return WkHtmlSmartConvertBuilder;
+            builder.Services.Configure(configure);
+            builder.Services.TryAddSingleton<IPdfConvert, DefaultPdfConvert>();
+            return builder;
         }
     }
 }

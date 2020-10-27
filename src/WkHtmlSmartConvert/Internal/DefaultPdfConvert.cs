@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using System;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -8,7 +10,12 @@ namespace WkHtmlSmartConvert.Internal
 {
     internal class DefaultPdfConvert : ExternalProcess, IPdfConvert
     {
-        public DefaultPdfConvert() : base("wkhtmltopdf") { }
+        private readonly PdfOptions _defaultOptions;
+
+        public DefaultPdfConvert(IServiceProvider serviceProvider) : base("wkhtmltopdf")
+        {
+            _defaultOptions = serviceProvider.GetRequiredService<IOptions<PdfOptions>>().Value;
+        }
 
         public async Task<byte[]> ConvertAsync(string html)
         {
@@ -17,7 +24,7 @@ namespace WkHtmlSmartConvert.Internal
 
         public async Task<byte[]> ConvertAsync(string html, CancellationToken cancellationToken)
         {
-            return await ConvertAsync(html, new PdfOptions(), CancellationToken.None);
+            return await ConvertAsync(html, _defaultOptions, CancellationToken.None);
         }
 
         public async Task<byte[]> ConvertAsync(string html, PdfOptions options)
@@ -27,8 +34,15 @@ namespace WkHtmlSmartConvert.Internal
 
         public async Task<byte[]> ConvertAsync(string html, PdfOptions options, CancellationToken cancellationToken)
         {
+            if (html == null) throw new ArgumentNullException(nameof(html));
+
             using var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(html));
             return await ConvertAsync(memoryStream, options, CancellationToken.None);
+        }
+
+        public async Task<byte[]> ConvertAsync(Stream html)
+        {
+            return await ConvertAsync(html, _defaultOptions);
         }
 
         public async Task<byte[]> ConvertAsync(Stream html, PdfOptions options)
@@ -40,7 +54,6 @@ namespace WkHtmlSmartConvert.Internal
         {
             if (html == null) throw new ArgumentNullException(nameof(html));
             if (options == null) throw new ArgumentNullException(nameof(options));
-            if (cancellationToken == null) throw new ArgumentNullException(nameof(cancellationToken));
 
             var baseFileName = Path.Combine(Path.GetTempPath(), "WkhtmlToPdf", Guid.NewGuid().ToString());
             var htmlFileName = $"{baseFileName}.html";
