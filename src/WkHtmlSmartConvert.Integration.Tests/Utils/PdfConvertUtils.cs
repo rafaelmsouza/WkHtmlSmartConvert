@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 
@@ -18,11 +17,6 @@ namespace WkHtmlSmartConvert.Integration.Tests.Utils
         {
             var services = new ServiceCollection();
             services.AddWkHtmlSmartConvert().AddPdf(options);
-            services.AddLogging(options =>
-            {
-                options.AddDebug();
-                options.AddConsole();
-            });
             return services.BuildServiceProvider().GetService<IPdfConvert>();
         }
 
