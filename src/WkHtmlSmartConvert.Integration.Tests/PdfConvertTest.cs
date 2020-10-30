@@ -24,7 +24,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
             var buffer = await pdfConvert.ConvertAsync(html);
 
             // Assert
-            buffer.Should().HaveCount(14655);
+            buffer.Length.Should().BeInRange(14600, 14700);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
             var buffer = await pdfConvert.ConvertAsync(html, options);
 
             // Assert
-            buffer.Should().HaveCount(15676);
+            buffer.Length.Should().BeInRange(15600, 15700);
         }
 
         [Fact]
@@ -63,7 +63,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
             var buffer = await pdfConvert.ConvertAsync(html, options);
             
             // Assert
-            buffer.Should().HaveCount(31287);
+            buffer.Length.Should().BeInRange(31200, 31300);
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
             var buffer = await pdfConvert.ConvertAsync(html);
 
             // Assert
-            buffer.Should().HaveCount(26660);
+            buffer.Length.Should().BeInRange(26600, 26700);
         }
 
         [Fact]
@@ -96,7 +96,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
             var buffer = await pdfConvert.ConvertAsync(memoryStream);
             
             // Assert
-            buffer.Should().HaveCount(14655);
+            buffer.Length.Should().BeInRange(14600, 14700);
         }
 
         [Theory]
