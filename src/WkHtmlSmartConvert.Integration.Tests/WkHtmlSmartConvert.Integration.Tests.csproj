@@ -38,4 +38,12 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <CustomCopyFile Include="..\WkHtmlSmartConvert.Embedded\runtimes\**\*.*" TargetPath="runtimes\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <Target Name="CopyFilesRuntimes" BeforeTargets="BeforeBuild">
+    <Copy SourceFiles="@(CustomCopyFile)" DestinationFiles="@(CustomCopyFile->'$(OutDir)%(TargetPath)')" />
+  </Target>
+
 </Project>
