@@ -2,9 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <RunSettingsFilePath>..\..\coverlet.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.10.3" />

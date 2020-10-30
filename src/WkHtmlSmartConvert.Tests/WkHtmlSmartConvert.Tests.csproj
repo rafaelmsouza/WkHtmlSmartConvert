@@ -2,8 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
 
-    <IsPackable>false</IsPackable>
+  <PropertyGroup>
+    <RunSettingsFilePath>..\..\coverlet.runsettings</RunSettingsFilePath>
   </PropertyGroup>
 
   <ItemGroup>
