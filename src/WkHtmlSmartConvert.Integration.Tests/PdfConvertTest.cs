@@ -13,6 +13,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
     public class PdfConvertTest
     {
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_StaticHtml()
         {
             // Arrange
@@ -28,6 +29,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_StaticHtml_WithOptions()
         {
             // Arrange
@@ -49,6 +51,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_StaticHtml_ImageEmbedded()
         {
             // Arrange
@@ -67,6 +70,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_StaticHtml_DefaultOPtions()
         {
             // Arrange
@@ -85,6 +89,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_ThrowCancellationRequested()
         {
             // Arrange
@@ -99,6 +104,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_Stream()
         {
             // Arrange
@@ -116,6 +122,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         [Theory]
         [InlineData(null, null)]
         [InlineData("", null)]
+        [Trait("Category", "Embedded")]
         public async void Convert_ThrowArgumentNullException(string html, PdfOptions options)
         {
             // Arrange
@@ -129,6 +136,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "Embedded")]
         public async void Convert_Stream_ThrowArgumentNullException()
         {
             // Arrange
@@ -143,6 +151,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        [Trait("Category", "EnvironmentVariable")]
         public async void Convert_StaticHtml_WithoutEmbedded()
         {
             // Arrange
