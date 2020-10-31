@@ -11,7 +11,8 @@ namespace WkHtmlSmartConvert.Internal
     {
         private readonly PdfOptions _defaultOptions;
 
-        public DefaultPdfConvert(IOptions<PdfOptions> options) : base("wkhtmltopdf")
+        public DefaultPdfConvert(IExecutablePath executablePath, IOptions<PdfOptions> options) 
+            : base(executablePath, "wkhtmltopdf")
         {
             _defaultOptions = options.Value;
         }
@@ -23,7 +24,7 @@ namespace WkHtmlSmartConvert.Internal
 
         public async Task<byte[]> ConvertAsync(string html, CancellationToken cancellationToken)
         {
-            return await ConvertAsync(html, _defaultOptions, CancellationToken.None);
+            return await ConvertAsync(html, _defaultOptions, cancellationToken);
         }
 
         public async Task<byte[]> ConvertAsync(string html, PdfOptions options)
@@ -36,7 +37,7 @@ namespace WkHtmlSmartConvert.Internal
             if (html == null) throw new ArgumentNullException(nameof(html));
 
             using var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(html));
-            return await ConvertAsync(memoryStream, options, CancellationToken.None);
+            return await ConvertAsync(memoryStream, options, cancellationToken);
         }
 
         public async Task<byte[]> ConvertAsync(Stream html)
@@ -53,6 +54,8 @@ namespace WkHtmlSmartConvert.Internal
         {
             if (html == null) throw new ArgumentNullException(nameof(html));
             if (options == null) throw new ArgumentNullException(nameof(options));
+
+            cancellationToken.ThrowIfCancellationRequested();
 
             var baseFileName = Path.Combine(Path.GetTempPath(), "WkhtmlToPdf", Guid.NewGuid().ToString());
             var htmlFileName = $"{baseFileName}.html";

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <RunSettingsFilePath>..\..\coverlet.runsettings</RunSettingsFilePath>
+    <RunSettingsFilePath>$(MSBuildProjectDirectory)\coverlet.runsettings</RunSettingsFilePath>
   </PropertyGroup>
 
 
@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WkHtmlSmartConvert.Embedded\WkHtmlSmartConvert.Embedded.csproj" />
     <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj" />
   </ItemGroup>
 
@@ -37,13 +38,5 @@
       <LastGenOutput>HtmlExemples.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
-  <ItemGroup>
-    <CustomCopyFile Include="..\WkHtmlSmartConvert.Embedded\runtimes\**\*.*" TargetPath="runtimes\%(RecursiveDir)%(Filename)%(Extension)" />
-  </ItemGroup>
-
-  <Target Name="CopyFilesRuntimes" BeforeTargets="BeforeBuild">
-    <Copy SourceFiles="@(CustomCopyFile)" DestinationFiles="@(CustomCopyFile->'$(OutDir)%(TargetPath)')" />
-  </Target>
 
 </Project>

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <RunSettingsFilePath>..\..\coverlet.runsettings</RunSettingsFilePath>
+    <RunSettingsFilePath>$(MSBuildProjectDirectory)\coverlet.runsettings</RunSettingsFilePath>
   </PropertyGroup>
 
   <ItemGroup>

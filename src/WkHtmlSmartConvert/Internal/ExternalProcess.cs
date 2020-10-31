@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -9,10 +8,12 @@ namespace WkHtmlSmartConvert.Internal
 {
     internal abstract class ExternalProcess
     {
+        private readonly IExecutablePath _executablePath;
         private readonly string _executableName;
 
-        public ExternalProcess(string executableName)
+        public ExternalProcess(IExecutablePath executablePath, string executableName)
         {
+            _executablePath = executablePath;
             _executableName = executableName;
         }
 
@@ -20,7 +21,7 @@ namespace WkHtmlSmartConvert.Internal
         {
             await Task.Run(() =>
             {
-                var path = GetExecutablePath();
+                var path = Path.Combine(_executablePath.Path, $"{_executableName}{GetExtetionFileByOSPlatform()}");
                 var process = new Process
                 {
                     StartInfo = new ProcessStartInfo(path, arguments)
@@ -44,22 +45,9 @@ namespace WkHtmlSmartConvert.Internal
             await inputStream.CopyToAsync(fileStream);
         }
 
-        private string GetExecutablePath() =>
-            Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "runtimes", GetExecutableByOSPlatform());
-
-        private string GetExecutableByOSPlatform()
+        private string GetExtetionFileByOSPlatform()
         {
-            if (!Environment.Is64BitOperatingSystem) throw new NotSupportedException("Operation System x86 not suported");
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                return Path.Combine("win-x64", "native",  $"{_executableName}.exe");
-            }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                return Path.Combine("linux-x64", "native", _executableName);
-            }
-            throw new NotSupportedException("Operation System not suported");
+            return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ".exe" : "";
         }
     }
 }

@@ -17,7 +17,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         {
             // Arrange
             PdfConvertUtils.DeleteTempDirectory();
-            var pdfConvert = PdfConvertUtils.Create();
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
             var html = HtmlExemples.Short;
 
             // Act
@@ -31,7 +31,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         public async void Convert_StaticHtml_WithOptions()
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.Create();
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
             var html = HtmlExemples.Short;
             var options = new PdfOptions
             {
@@ -52,7 +52,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         public async void Convert_StaticHtml_ImageEmbedded()
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.Create();
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
             var html = HtmlExemples.WithImage;
             var options = new PdfOptions
             {
@@ -70,7 +70,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         public async void Convert_StaticHtml_DefaultOPtions()
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.Create(options => {
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded(options => {
                 options.PageOrientation = PageOrientation.Landscape;
                 options.IsGrayScale = true;
                 options.PageSize = PageSize.A2;
@@ -85,10 +85,24 @@ namespace WkHtmlSmartConvert.Integration.Tests
         }
 
         [Fact]
+        public async void Convert_ThrowCancellationRequested()
+        {
+            // Arrange
+            var cancellationToken = new CancellationToken(true);
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
+
+            // Act
+            Task act() => pdfConvert.ConvertAsync("", cancellationToken);
+
+            // Assert
+            await Assert.ThrowsAsync<OperationCanceledException>(act);
+        }
+
+        [Fact]
         public async void Convert_Stream()
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.Create();
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
             var html = HtmlExemples.Short;
             var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(html));
 
@@ -105,7 +119,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         public async void Convert_ThrowArgumentNullException(string html, PdfOptions options)
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.Create();
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
 
             // Act
             Task act() => pdfConvert.ConvertAsync(html, options, CancellationToken.None);
@@ -118,7 +132,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         public async void Convert_Stream_ThrowArgumentNullException()
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.Create();
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
             Stream html = null;
 
             // Act
@@ -126,6 +140,21 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
             // Assert
             await Assert.ThrowsAsync<ArgumentNullException>(act);
+        }
+
+        [Fact]
+        public async void Convert_StaticHtml_WithoutEmbedded()
+        {
+            // Arrange
+            PdfConvertUtils.DeleteTempDirectory();
+            var pdfConvert = PdfConvertUtils.Create();
+            var html = HtmlExemples.Short;
+
+            // Act
+            var buffer = await pdfConvert.ConvertAsync(html);
+
+            // Assert
+            buffer.Length.Should().BeInRange(14600, 14700);
         }
     }
 }

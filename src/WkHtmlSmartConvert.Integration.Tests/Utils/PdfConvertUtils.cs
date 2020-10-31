@@ -6,17 +6,24 @@ namespace WkHtmlSmartConvert.Integration.Tests.Utils
 {
     internal static class PdfConvertUtils
     {
+        public static IPdfConvert CreateWithAddEmbedded()
+        {
+            var services = new ServiceCollection();
+            services.AddWkHtmlSmartConvert().AddPdf().AddEmbedded();
+            return services.BuildServiceProvider().GetService<IPdfConvert>();
+        }
+
+        public static IPdfConvert CreateWithAddEmbedded(Action<PdfOptions> options)
+        {
+            var services = new ServiceCollection();
+            services.AddWkHtmlSmartConvert().AddEmbedded().AddPdf(options);
+            return services.BuildServiceProvider().GetService<IPdfConvert>();
+        }
+
         public static IPdfConvert Create()
         {
             var services = new ServiceCollection();
             services.AddWkHtmlSmartConvert().AddPdf();
-            return services.BuildServiceProvider().GetService<IPdfConvert>();
-        }
-
-        public static IPdfConvert Create(Action<PdfOptions> options)
-        {
-            var services = new ServiceCollection();
-            services.AddWkHtmlSmartConvert().AddPdf(options);
             return services.BuildServiceProvider().GetService<IPdfConvert>();
         }
 

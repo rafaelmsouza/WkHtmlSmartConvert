@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert", "WkHtm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Tests", "WkHtmlSmartConvert.Tests\WkHtmlSmartConvert.Tests.csproj", "{E4E7AF04-A02C-431E-BB81-28CB638362A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WkHtmlSmartConvert.Integration.Tests", "WkHtmlSmartConvert.Integration.Tests\WkHtmlSmartConvert.Integration.Tests.csproj", "{4DD46564-27FF-4D09-84C3-C1B230EE0718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Integration.Tests", "WkHtmlSmartConvert.Integration.Tests\WkHtmlSmartConvert.Integration.Tests.csproj", "{4DD46564-27FF-4D09-84C3-C1B230EE0718}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{85BAAC00-7BA4-42E0-AB4F-FFF512B93978}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3E35E219-8571-47D5-A4D3-256BA33A709D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Embedded", "WkHtmlSmartConvert.Embedded\WkHtmlSmartConvert.Embedded.csproj", "{6E6863B8-729C-4354-AB97-44E9B6DE501F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{4DD46564-27FF-4D09-84C3-C1B230EE0718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD46564-27FF-4D09-84C3-C1B230EE0718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD46564-27FF-4D09-84C3-C1B230EE0718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6863B8-729C-4354-AB97-44E9B6DE501F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6863B8-729C-4354-AB97-44E9B6DE501F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6863B8-729C-4354-AB97-44E9B6DE501F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6863B8-729C-4354-AB97-44E9B6DE501F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{1FBCB95A-590D-4FBD-84AD-C67BF170FF8D} = {85BAAC00-7BA4-42E0-AB4F-FFF512B93978}
 		{E4E7AF04-A02C-431E-BB81-28CB638362A1} = {3E35E219-8571-47D5-A4D3-256BA33A709D}
 		{4DD46564-27FF-4D09-84C3-C1B230EE0718} = {3E35E219-8571-47D5-A4D3-256BA33A709D}
+		{6E6863B8-729C-4354-AB97-44E9B6DE501F} = {85BAAC00-7BA4-42E0-AB4F-FFF512B93978}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C5DE074-E16E-4E63-BBA2-96309EAD970E}
