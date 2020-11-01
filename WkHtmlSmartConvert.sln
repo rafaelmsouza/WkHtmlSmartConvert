@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert", "WkHtmlSmartConvert\WkHtmlSmartConvert.csproj", "{1FBCB95A-590D-4FBD-84AD-C67BF170FF8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert", "src\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj", "{1FBCB95A-590D-4FBD-84AD-C67BF170FF8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Tests", "WkHtmlSmartConvert.Tests\WkHtmlSmartConvert.Tests.csproj", "{E4E7AF04-A02C-431E-BB81-28CB638362A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Tests", "tests\WkHtmlSmartConvert.Tests\WkHtmlSmartConvert.Tests.csproj", "{E4E7AF04-A02C-431E-BB81-28CB638362A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Integration.Tests", "WkHtmlSmartConvert.Integration.Tests\WkHtmlSmartConvert.Integration.Tests.csproj", "{4DD46564-27FF-4D09-84C3-C1B230EE0718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Integration.Tests", "tests\WkHtmlSmartConvert.Integration.Tests\WkHtmlSmartConvert.Integration.Tests.csproj", "{4DD46564-27FF-4D09-84C3-C1B230EE0718}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{85BAAC00-7BA4-42E0-AB4F-FFF512B93978}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3E35E219-8571-47D5-A4D3-256BA33A709D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Embedded", "WkHtmlSmartConvert.Embedded\WkHtmlSmartConvert.Embedded.csproj", "{6E6863B8-729C-4354-AB97-44E9B6DE501F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WkHtmlSmartConvert.Embedded", "src\WkHtmlSmartConvert.Embedded\WkHtmlSmartConvert.Embedded.csproj", "{6E6863B8-729C-4354-AB97-44E9B6DE501F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
