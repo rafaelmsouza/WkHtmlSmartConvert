@@ -2,7 +2,7 @@ using FluentAssertions;
 using System.Text;
 using Xunit;
 
-namespace WkHtmlSmartConvert.Tests
+namespace WkHtmlSmartConvert.Tests.Core
 {
     public class PdfOptionsTest
     {

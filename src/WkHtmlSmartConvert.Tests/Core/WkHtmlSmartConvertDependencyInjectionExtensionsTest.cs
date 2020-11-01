@@ -2,7 +2,7 @@ using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace WkHtmlSmartConvert.Tests
+namespace WkHtmlSmartConvert.Tests.Core
 {
     public class WkHtmlSmartConvertDependencyInjectionExtensionsTest
     {
@@ -16,7 +16,8 @@ namespace WkHtmlSmartConvert.Tests
             WkHtmlSmartConvertDependencyInjectionExtensions.AddWkHtmlSmartConvert(collection);
 
             // Assert
-            collection.Should().NotContain(p => p.ServiceType == typeof(IPdfConvert));
+            collection.Should().NotBeEmpty();
+            collection.Should().ContainSingle(p => p.ServiceType == typeof(IExecutablePath));
         }
     }
 }

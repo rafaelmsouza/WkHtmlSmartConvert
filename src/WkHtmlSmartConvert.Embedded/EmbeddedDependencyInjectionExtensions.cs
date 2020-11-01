@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection.Extensions;
-using WkHtmlSmartConvert;
+﻿using WkHtmlSmartConvert;
 using WkHtmlSmartConvert.Embedded.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection

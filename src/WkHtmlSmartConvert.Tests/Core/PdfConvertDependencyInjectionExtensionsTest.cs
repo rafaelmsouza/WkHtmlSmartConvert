@@ -2,10 +2,9 @@ using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace WkHtmlSmartConvert.Tests
+namespace WkHtmlSmartConvert.Tests.Core
 {
     public class PdfConvertDependencyInjectionExtensionsTest
     {
@@ -19,7 +18,7 @@ namespace WkHtmlSmartConvert.Tests
         }
 
         [Fact]
-        public void AddWkHtmlSmartConvert_AddsNeededServices()
+        public void AddPdf_AddsNeededServices()
         {
             // Act
             var builder = PdfConvertDependencyInjectionExtensions.AddPdf(_wkHtmlSmartConvertBuilder.Object);
@@ -30,7 +29,7 @@ namespace WkHtmlSmartConvert.Tests
         }
 
         [Fact]
-        public void AddWkHtmlSmartConvert_ThrowArgumentNullException()
+        public void AddPdf_ThrowArgumentNullException()
         {
             // Act
             IWkHtmlSmartConvertBuilder act() => PdfConvertDependencyInjectionExtensions

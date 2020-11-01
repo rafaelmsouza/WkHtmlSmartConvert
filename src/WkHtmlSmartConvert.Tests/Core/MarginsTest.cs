@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace WkHtmlSmartConvert.Tests
+namespace WkHtmlSmartConvert.Tests.Core
 {
     public class MarginsTest
     {
