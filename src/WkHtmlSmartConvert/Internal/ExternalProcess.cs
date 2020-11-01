@@ -11,7 +11,7 @@ namespace WkHtmlSmartConvert.Internal
         private readonly IExecutablePath _executablePath;
         private readonly string _executableName;
 
-        public ExternalProcess(IExecutablePath executablePath, string executableName)
+        protected ExternalProcess(IExecutablePath executablePath, string executableName)
         {
             _executablePath = executablePath;
             _executableName = executableName;

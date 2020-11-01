@@ -27,25 +27,25 @@ namespace WkHtmlSmartConvert
         /// Set the page top margin
         /// </summary>
         [CommandLine("-T")]
-        public int? Top;
+        public int? Top { get; set; }
 
         /// <summary>
         /// Set the page right margin (default 10mm)
         /// </summary>
         [CommandLine("-R")]
-        public int? Right;
+        public int? Right { get; set; }
 
         /// <summary>
         /// Set the page bottom margin
         /// </summary>
         [CommandLine("-B")]
-        public int? Bottom;
+        public int? Bottom { get; set; }
 
         /// <summary>
         /// Set the page left margin (default 10mm)
         /// </summary>
         [CommandLine("-L")]
-        public int? Left;
+        public int? Left { get; set; }
 
         public override string ToString()
         {
