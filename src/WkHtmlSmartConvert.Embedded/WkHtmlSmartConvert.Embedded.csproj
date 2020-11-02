@@ -2,23 +2,60 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>WkHtmlSmartConvert.Embedded</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup Label="Nuget Pack">
+    <PackageId>WkHtmlSmartConvert.Embedded</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Title>Best wrapper of wkhtmltopdf library</Title>
+    <Description>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</Description>
+    <PackageDescription>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</PackageDescription>
+    <Authors>rafaelmsouza</Authors>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageIcon>assets\icon.png</PackageIcon>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>wkhtmltopdf;html;pdf</PackageTags>
+    <RepositoryUrl>https://github.com/rafaelmsouza/WkHtmlSmartConvert</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup Label="Icon Nuget Pack">
+    <None Include="..\..\assets\icon.png">
+      <Visible>false</Visible>
+      <Pack>true</Pack>
+      <PackagePath>assets</PackagePath>
+    </None>
+  </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj" />
+    <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj">
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="runtimes\linux-x64\native\libwkhtmltox.so">
+      <Pack>true</Pack>
+      <PackagePath>runtimes\linux-x64\native</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="runtimes\linux-x64\native\wkhtmltopdf">
+      <Pack>true</Pack>
+      <PackagePath>runtimes\linux-x64\native</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="runtimes\win-x64\native\wkhtmltopdf.exe">
+      <Pack>true</Pack>
+      <PackagePath>runtimes\win-x64\native</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="runtimes\win-x64\native\wkhtmltox.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes\win-x64\native</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
