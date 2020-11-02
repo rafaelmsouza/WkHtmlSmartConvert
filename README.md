@@ -18,7 +18,7 @@ This project implements conversion of HTML to PDF, working in windows and linux 
 
 1. Install the standard nuget package into your application.
 
-    ```console
+    ```bash
     dotnet add package WkHtmlSmartConvert
     ```
 
@@ -48,7 +48,7 @@ The standard configuration looking for wkhtmltopdf installed on host and environ
 
 1. Install the additional nuget package into your application.
 
-    ```console
+    ```bash
     dotnet add package WkHtmlSmartConvert.Embedded
     ```
 
