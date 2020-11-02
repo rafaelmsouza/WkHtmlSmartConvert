@@ -10,8 +10,8 @@ This project implements conversion of HTML to PDF, working in windows and linux 
 
 | Package | Version |
 | --- | --- |
-| [WkHtmlSmartConvert](https://www.nuget.org/packages/Roslynator.Analyzers) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) |
-| [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) |
+| [WkHtmlSmartConvert](https://www.nuget.org/packages/WkHtmlSmartConvert/) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) |
+| [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) |
 
 
 ## Getting Started
