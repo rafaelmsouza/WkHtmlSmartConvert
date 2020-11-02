@@ -1,8 +1,8 @@
 # WkHtmlSmartConvert
 
 [![Build status](https://dev.azure.com/rafaelmsouza/WkHtmlSmartConvert/_apis/build/status/CI)](https://dev.azure.com/rafaelmsouza/WkHtmlSmartConvert/_build/latest?definitionId=2)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert&metric=coverage)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert&metric=security_rating)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert_master&metric=coverage)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert_master)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert_master&metric=security_rating)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert_master)
 
 This project implements conversion of HTML to PDF, working in windows and linux only on x64 arch.
 
