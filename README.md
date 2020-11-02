@@ -1,24 +1,24 @@
-# <img width="26px" height="26px" styles="" src="https://raw.githubusercontent.com/rafaelmsouza/WkHtmlSmartConvert/master/assets/icon.svg"> WkHtmlSmartConvert
+# WkHtmlSmartConvert
 
 [![Build status](https://dev.azure.com/rafaelmsouza/WkHtmlSmartConvert/_apis/build/status/CI)](https://dev.azure.com/rafaelmsouza/WkHtmlSmartConvert/_build/latest?definitionId=2)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert&metric=coverage)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert&metric=security_rating)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert)
 
-Best wrapper of wkhtmltopdf. This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.
+This project implements conversion of HTML to PDF, working in windows and linux only on x64 arch.
 
 ## NuGet Packages
 
 | Package | Version |
-| --- | --- | --- |
+| --- | --- |
 | [WkHtmlSmartConvert](https://www.nuget.org/packages/Roslynator.Analyzers) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) |
-| [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers) | [![NuGet](https://img.shields.io/nuget/v/Roslynator.CodeAnalysis.Analyzers.svg)](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers) |
+| [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) |
 
 
-## Getting Started #
+## Getting Started
 
-1. Install the standard Nuget package into your application.
+1. Install the standard nuget package into your application.
 
-    ```
+    ```console
     dotnet add package WkHtmlSmartConvert
     ```
 
@@ -29,7 +29,7 @@ Best wrapper of wkhtmltopdf. This project implements convertetion of HTML to PDF
         .AddWkHtmlSmartConvert()
         .AddPdf();
     ``` 
-    or, you can configure global options to every convertion, see [PdfOptions](https://github.com/rafaelmsouza/WkHtmlSmartConvert/blob/master/src/WkHtmlSmartConvert/PdfOptions.cs).
+    or, you can configure global options to every conversion, see [PdfOptions](https://github.com/rafaelmsouza/WkHtmlSmartConvert/blob/master/src/WkHtmlSmartConvert/PdfOptions.cs).
 
     ```csharp
     services
@@ -43,10 +43,28 @@ Best wrapper of wkhtmltopdf. This project implements convertetion of HTML to PDF
             });
     ```
 
+### Embedded files
+The standard configuration looking for wkhtmltopdf installed on host and environment variable PATH correctly configure, but instead of this, you can use the wkhtmltopdf embedded on the application.
+
+1. Install the additional nuget package into your application.
+
+    ```console
+    dotnet add package WkHtmlSmartConvert.Embedded
+    ```
+
+2. Configure **AddEmbedded** after **AddWkHtmlSmartConvert**.
+
+    ```csharp
+    services
+        .AddWkHtmlSmartConvert()
+        .AddEmbedded()
+        .AddPdf();
+    ```
+
  
 ## Convert HTML to PDF
 
-You **must** inject **IPdfConvert** and call :
+You **must** inject **IPdfConvert** and call **ConvertAsync**
 
 ```csharp
 public class ExamplePdfConvert

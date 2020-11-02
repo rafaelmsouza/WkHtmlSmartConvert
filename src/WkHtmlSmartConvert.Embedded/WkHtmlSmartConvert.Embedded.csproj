@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -10,7 +10,7 @@
   <PropertyGroup Label="Nuget Pack">
     <PackageId>WkHtmlSmartConvert.Embedded</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
-    <Title>Best wrapper of wkhtmltopdf library</Title>
+    <Title>A component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder</Title>
     <Description>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</Description>
     <PackageDescription>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</PackageDescription>
     <Authors>rafaelmsouza</Authors>
@@ -32,30 +32,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="WkHtmlSmartConvert" Version="0.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
   </ItemGroup>
-
+  
   <ItemGroup>
     <None Update="runtimes\linux-x64\native\libwkhtmltox.so">
       <Pack>true</Pack>
-      <PackagePath>runtimes\linux-x64\native</PackagePath>
+      <PackagePath></PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="runtimes\linux-x64\native\wkhtmltopdf">
       <Pack>true</Pack>
-      <PackagePath>runtimes\linux-x64\native</PackagePath>
+      <PackagePath></PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="runtimes\win-x64\native\wkhtmltopdf.exe">
       <Pack>true</Pack>
-      <PackagePath>runtimes\win-x64\native</PackagePath>
+      <PackagePath></PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="runtimes\win-x64\native\wkhtmltox.dll">
       <Pack>true</Pack>
-      <PackagePath>runtimes\win-x64\native</PackagePath>
+      <PackagePath></PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

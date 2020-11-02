@@ -10,8 +10,8 @@
   <PropertyGroup Label="Nuget Pack">
     <PackageId>WkHtmlSmartConvert</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
-    <Title>Best wrapper of wkhtmltopdf library</Title>
-    <Description>Best wrapper of wkhtmltopdf. This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</Description>
+    <Title>The best wrapper of wkhtmltopdf library</Title>
+    <Description>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</Description>
     <PackageDescription>Best wrapper of wkhtmltopdf. This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</PackageDescription>
     <Authors>rafaelmsouza</Authors>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
