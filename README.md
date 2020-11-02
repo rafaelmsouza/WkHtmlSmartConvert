@@ -4,7 +4,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert_master&metric=coverage)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert_master)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=wkhtmlsmartconvert_master&metric=security_rating)](https://sonarcloud.io/dashboard?id=wkhtmlsmartconvert_master)
 
-This project implements conversion of HTML to PDF, working in windows and linux only on x64 arch.
+This project implements the conversion of HTML to PDF using [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf). It works only at windows and linux, on x64 arch.
 
 ## NuGet Packages
 
@@ -44,7 +44,7 @@ This project implements conversion of HTML to PDF, working in windows and linux 
     ```
 
 ### Embedded files
-The standard configuration looking for wkhtmltopdf installed on host and environment variable PATH correctly configure, but instead of this, you can use the wkhtmltopdf embedded on the application.
+The standard configuration looks for [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf) installed on host and the environment variable **PATH** correctly configure, but instead of this, you can use the [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf) embedded on the application.
 
 1. Install the additional nuget package into your application.
 
@@ -52,7 +52,7 @@ The standard configuration looking for wkhtmltopdf installed on host and environ
     dotnet add package WkHtmlSmartConvert.Embedded
     ```
 
-2. Configure **AddEmbedded** after **AddWkHtmlSmartConvert**.
+2. Configure **AddEmbedded** just after **AddWkHtmlSmartConvert**.
 
     ```csharp
     services
@@ -64,7 +64,7 @@ The standard configuration looking for wkhtmltopdf installed on host and environ
  
 ## Convert HTML to PDF
 
-You **must** inject **IPdfConvert** and call **ConvertAsync**
+You **must** inject **IPdfConvert** and call method **ConvertAsync**
 
 ```csharp
 public class ExamplePdfConvert
