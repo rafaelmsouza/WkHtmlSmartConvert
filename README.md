@@ -8,10 +8,10 @@ This project implements the conversion of HTML to PDF using [wkhtmltopdf](https:
 
 ## NuGet Packages
 
-| Package | Version |
-| --- | --- |
-| [WkHtmlSmartConvert](https://www.nuget.org/packages/WkHtmlSmartConvert/) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) |
-| [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) |
+| Package | Version | Downloads |
+| --- | --- | --- |
+| [WkHtmlSmartConvert](https://www.nuget.org/packages/WkHtmlSmartConvert/) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) | [![NuGet](https://img.shields.io/nuget/dt/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) |
+| [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) | [![NuGet](https://img.shields.io/nuget/dt/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) |
 
 
 ## Getting Started
