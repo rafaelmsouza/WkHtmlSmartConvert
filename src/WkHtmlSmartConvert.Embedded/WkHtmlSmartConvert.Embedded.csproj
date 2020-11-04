@@ -4,13 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>WkHtmlSmartConvert.Embedded</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.1</Version>
+    <VersionPrefix>1.0.2</VersionPrefix>
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Label="Nuget Pack">
     <PackageId>WkHtmlSmartConvert.Embedded</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
     <Title>A component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder</Title>
     <Description>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</Description>
     <PackageDescription>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</PackageDescription>
@@ -33,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WkHtmlSmartConvert" Version="1.0.1">
+    <PackageReference Include="WkHtmlSmartConvert" Version="1.0.4">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>

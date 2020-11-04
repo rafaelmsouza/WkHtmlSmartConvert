@@ -4,13 +4,12 @@
     <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <RootNamespace>WkHtmlSmartConvert</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.1</Version>
+    <VersionPrefix>1.0.4</VersionPrefix>
     <NoWarn>1591</NoWarn>    
   </PropertyGroup>
 
   <PropertyGroup Label="Nuget Pack">
     <PackageId>WkHtmlSmartConvert</PackageId>
-    <PackageVersion>1.0.1</PackageVersion>
     <Title>The best wrapper of wkhtmltopdf library</Title>
     <Description>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</Description>
     <PackageDescription>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</PackageDescription>
