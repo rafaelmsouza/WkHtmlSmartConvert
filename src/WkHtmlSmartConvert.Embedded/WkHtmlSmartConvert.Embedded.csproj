@@ -33,9 +33,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WkHtmlSmartConvert" Version="1.0.1" />
+    <PackageReference Include="WkHtmlSmartConvert" Version="1.0.1">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj" />
+  </ItemGroup>
+  
   <ItemGroup>
     <None Update="runtimes\linux-x64\native\libwkhtmltox.so">
       <Pack>true</Pack>
