@@ -6,41 +6,21 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <VersionPrefix>1.0.2</VersionPrefix>
     <NoWarn>1591</NoWarn>
-  </PropertyGroup>
-
-  <PropertyGroup Label="Nuget Pack">
     <PackageId>WkHtmlSmartConvert.Embedded</PackageId>
-    <Title>A component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder</Title>
     <Description>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</Description>
     <PackageDescription>This is a component of WkHtmlSmartConvert that copies the wkhtmltopdf file to the output folder instead of having to install wkhtmltopdf on the host</PackageDescription>
-    <Authors>rafaelmsouza</Authors>
-    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
-    <PackageIcon>assets\icon.png</PackageIcon>
-    <PackageProjectUrl></PackageProjectUrl>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>wkhtmltopdf;html;pdf</PackageTags>
-    <RepositoryUrl>https://github.com/rafaelmsouza/WkHtmlSmartConvert</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
-  <ItemGroup Label="Icon Nuget Pack">
-    <None Include="..\..\assets\icon.png">
-      <Visible>false</Visible>
-      <Pack>true</Pack>
-      <PackagePath>assets</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
+  <!-- <ItemGroup>
     <PackageReference Include="WkHtmlSmartConvert" Version="1.0.4">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
+  </ItemGroup> -->
 
   <ItemGroup>
     <ProjectReference Include="..\WkHtmlSmartConvert\WkHtmlSmartConvert.csproj" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <None Update="runtimes\linux-x64\native\wkhtmltopdf">
       <Pack>true</Pack>
