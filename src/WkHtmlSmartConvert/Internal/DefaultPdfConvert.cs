@@ -17,19 +17,19 @@ namespace WkHtmlSmartConvert.Internal
             _defaultOptions = options.Value;
         }
 
-        public async Task<byte[]> ConvertAsync(string html)
+        public Task<byte[]> ConvertAsync(string html)
         {
-            return await ConvertAsync(html, CancellationToken.None);
+            return ConvertAsync(html, CancellationToken.None);
         }
 
-        public async Task<byte[]> ConvertAsync(string html, CancellationToken cancellationToken)
+        public Task<byte[]> ConvertAsync(string html, CancellationToken cancellationToken)
         {
-            return await ConvertAsync(html, _defaultOptions, cancellationToken);
+            return ConvertAsync(html, _defaultOptions, cancellationToken);
         }
 
-        public async Task<byte[]> ConvertAsync(string html, PdfOptions options)
+        public Task<byte[]> ConvertAsync(string html, PdfOptions options)
         {
-            return await ConvertAsync(html, options, CancellationToken.None);
+            return ConvertAsync(html, options, CancellationToken.None);
         }
 
         public Task<byte[]> ConvertAsync(string html, PdfOptions options, CancellationToken cancellationToken)
@@ -40,14 +40,14 @@ namespace WkHtmlSmartConvert.Internal
             return ConvertAsync(memoryStream, options, cancellationToken);
         }
 
-        public async Task<byte[]> ConvertAsync(Stream html)
+        public Task<byte[]> ConvertAsync(Stream html)
         {
-            return await ConvertAsync(html, _defaultOptions);
+            return ConvertAsync(html, _defaultOptions);
         }
 
-        public async Task<byte[]> ConvertAsync(Stream html, PdfOptions options)
+        public Task<byte[]> ConvertAsync(Stream html, PdfOptions options)
         {
-            return await ConvertAsync(html, options, CancellationToken.None);
+            return ConvertAsync(html, options, CancellationToken.None);
         }
 
         public Task<byte[]> ConvertAsync(Stream html, PdfOptions options, CancellationToken cancellationToken)
