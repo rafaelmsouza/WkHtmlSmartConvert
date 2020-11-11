@@ -35,9 +35,10 @@ namespace WkHtmlSmartConvert.Internal
         public Task<byte[]> ConvertAsync(string html, PdfOptions options, CancellationToken cancellationToken)
         {
             if (html == null) throw new ArgumentNullException(nameof(html));
-
-            using var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(html));
-            return ConvertAsync(memoryStream, options, cancellationToken);
+            using (var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(html)))
+            {
+                return ConvertAsync(memoryStream, options, cancellationToken);
+            }
         }
 
         public Task<byte[]> ConvertAsync(Stream html)

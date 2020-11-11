@@ -40,16 +40,18 @@ namespace WkHtmlSmartConvert.Internal
             }, cancellationToken);
         }
 
-        protected async Task SaveFileInTempFolderAsync(Stream inputStream, string pathFile)
+        protected static async Task SaveFileInTempFolderAsync(Stream inputStream, string pathFile)
         {
             var fileInfo = new FileInfo(pathFile);
             if (!fileInfo.Directory.Exists) fileInfo.Directory.Create();
 
-            using var fileStream = new FileStream(pathFile, FileMode.CreateNew);
-            await inputStream.CopyToAsync(fileStream);
+            using (var fileStream = new FileStream(pathFile, FileMode.CreateNew))
+            {
+                await inputStream.CopyToAsync(fileStream);
+            }
         }
 
-        private string GetExtetionFileByOSPlatform()
+        private static string GetExtetionFileByOSPlatform()
         {
             return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ".exe" : "";
         }
