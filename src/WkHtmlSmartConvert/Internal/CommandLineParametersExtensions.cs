@@ -25,15 +25,21 @@ namespace WkHtmlSmartConvert.Internal
 
         private static (string val, bool skip) OptionsPropertyValueToString(object memberInfoValue)
         {
-            return memberInfoValue switch
+            switch (memberInfoValue)
             {
-                int value => (value.ToString(), false),
-                bool value => (string.Empty, !value),
-                Enum value => (value.ToString().ToLower(), false),
-                Encoding value => (value.BodyName, false),
-                Margins value => (value.ToString(), false),
-                _ => (string.Empty, true),
-            };
+                case int value:
+                    return (value.ToString(), false);
+                case bool value:
+                    return (string.Empty, !value);
+                case Enum value:
+                    return (value.ToString().ToLower(), false);
+                case Encoding value:
+                    return (value.BodyName, false);
+                case Margins value:
+                    return (value.ToString(), false);
+                default:
+                    return (string.Empty, true);
+            }
         }
     }
 }

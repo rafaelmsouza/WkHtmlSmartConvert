@@ -1,38 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp3.1;net5.0</TargetFrameworks>
     <RootNamespace>WkHtmlSmartConvert</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <VersionPrefix>1.0.4</VersionPrefix>
-    <NoWarn>1591</NoWarn>    
-  </PropertyGroup>
-
-  <PropertyGroup Label="Nuget Pack">
+    <VersionPrefix>1.1.0</VersionPrefix>
+    <NoWarn>1591</NoWarn>
     <PackageId>WkHtmlSmartConvert</PackageId>
-    <Title>The best wrapper of wkhtmltopdf library</Title>
     <Description>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</Description>
     <PackageDescription>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</PackageDescription>
-    <Authors>rafaelmsouza</Authors>
-    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
-    <PackageIcon>assets\icon.png</PackageIcon>
-    <PackageProjectUrl></PackageProjectUrl>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>wkhtmltopdf;html;pdf</PackageTags>
-    <RepositoryUrl>https://github.com/rafaelmsouza/WkHtmlSmartConvert</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
-
-  <ItemGroup Label="icon">
-    <None Include="..\..\assets\icon.png">
-      <Visible>false</Visible>
-      <Pack>true</Pack>
-      <PackagePath>assets</PackagePath>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.9" />
   </ItemGroup>
-
 </Project>

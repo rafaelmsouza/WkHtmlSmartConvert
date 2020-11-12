@@ -14,7 +14,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
     {
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_StaticHtml()
+        public async Task Convert_StaticHtml()
         {
             // Arrange
             PdfConvertUtils.DeleteTempDirectory();
@@ -30,7 +30,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_StaticHtml_WithOptions()
+        public async Task Convert_StaticHtml_WithOptions()
         {
             // Arrange
             var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
@@ -52,7 +52,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_StaticHtml_ImageEmbedded()
+        public async Task Convert_StaticHtml_ImageEmbedded()
         {
             // Arrange
             var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
@@ -64,17 +64,18 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
             // Act
             var buffer = await pdfConvert.ConvertAsync(html, options);
-            
+
             // Assert
             buffer.Length.Should().BeInRange(31200, 31300);
         }
 
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_StaticHtml_DefaultOPtions()
+        public async Task Convert_StaticHtml_DefaultOPtions()
         {
             // Arrange
-            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded(options => {
+            var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded(options =>
+            {
                 options.PageOrientation = PageOrientation.Landscape;
                 options.IsGrayScale = true;
                 options.PageSize = PageSize.A2;
@@ -90,7 +91,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_ThrowCancellationRequested()
+        public async Task Convert_ThrowCancellationRequested()
         {
             // Arrange
             var cancellationToken = new CancellationToken(true);
@@ -105,7 +106,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_Stream()
+        public async Task Convert_Stream()
         {
             // Arrange
             var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
@@ -114,7 +115,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
             // Act
             var buffer = await pdfConvert.ConvertAsync(memoryStream);
-            
+
             // Assert
             buffer.Length.Should().BeInRange(14600, 14700);
         }
@@ -123,7 +124,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
         [InlineData(null, null)]
         [InlineData("", null)]
         [Trait("Category", "Embedded")]
-        public async void Convert_ThrowArgumentNullException(string html, PdfOptions options)
+        public async Task Convert_ThrowArgumentNullException(string html, PdfOptions options)
         {
             // Arrange
             var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
@@ -137,7 +138,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
         [Fact]
         [Trait("Category", "Embedded")]
-        public async void Convert_Stream_ThrowArgumentNullException()
+        public async Task Convert_Stream_ThrowArgumentNullException()
         {
             // Arrange
             var pdfConvert = PdfConvertUtils.CreateWithAddEmbedded();
@@ -152,7 +153,7 @@ namespace WkHtmlSmartConvert.Integration.Tests
 
         [Fact]
         [Trait("Category", "EnvironmentVariable")]
-        public async void Convert_StaticHtml_WithoutEmbedded()
+        public async Task Convert_StaticHtml_WithoutEmbedded()
         {
             // Arrange
             PdfConvertUtils.DeleteTempDirectory();
