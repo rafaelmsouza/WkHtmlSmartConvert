@@ -13,6 +13,7 @@ This project implements the conversion of HTML to PDF using [wkhtmltopdf](https:
 | [WkHtmlSmartConvert](https://www.nuget.org/packages/WkHtmlSmartConvert/) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) | [![NuGet](https://img.shields.io/nuget/dt/WkHtmlSmartConvert)](https://www.nuget.org/packages/WkHtmlSmartConvert/) |
 | [WkHtmlSmartConvert.Embedded](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) | [![NuGet](https://img.shields.io/nuget/v/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) | [![NuGet](https://img.shields.io/nuget/dt/WkHtmlSmartConvert.Embedded)](https://www.nuget.org/packages/WkHtmlSmartConvert.Embedded) |
 
+Packages with suport to .Net Core **2.1**, **3.1** and .Net **5.0** 
 
 ## Getting Started
 
