@@ -6,7 +6,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <VersionPrefix>1.1.0</VersionPrefix>
     <NoWarn>1591</NoWarn>
-    <!-- <SignAssembly Condition="'$(OS)'=='Windows_NT'">true</SignAssembly> -->
     <PackageId>WkHtmlSmartConvert</PackageId>
     <Description>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</Description>
     <PackageDescription>This project implements convertetion of HTML to PDF, working in windows e linux only on x64 arch.</PackageDescription>
