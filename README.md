@@ -37,7 +37,7 @@ Packages with suport to .Net Core **2.1**, **3.1** and .Net **5.0**
         .AddWkHtmlSmartConvert()
         .AddPdf(options =>
             {
-                options.PageOrientation = PageOrientation.options.Landscape,
+                options.PageOrientation = PageOrientation.Landscape,
                 options.IsGrayScale = true,
                 options.Copies = 2,
                 options.PageSize = PageSize.A0
